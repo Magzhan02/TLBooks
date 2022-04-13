@@ -1,0 +1,54 @@
+@use './variables'as v;
+@import './normalize';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: v.$background;
+  color: v.$color;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.wrp {
+  max-width: 1320px;
+  margin: 30px auto;
+  background-color: v.$background-second;
+  border-radius: 8px;
+  position: relative;
+
+  .body {
+    .body_menu {
+      width: 80px;
+      background: v.$background-aside;
+      border-radius:8px 0 0 8px;
+
+      menu {
+        border-right: 1px solid v.$border;
+
+        ul {
+          li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+          
+            img {
+              width: 50px;
+              height: 50px;
+           
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
