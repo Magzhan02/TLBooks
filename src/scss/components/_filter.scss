@@ -1,0 +1,149 @@
+.filter-block {
+    padding: 5px 30px;
+    margin-bottom: 30px;
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+
+      label {
+        font-size: 14px;
+        color: v.$green-sec;
+        padding-bottom: 5px;
+      }
+
+      input {
+        width: 100%;
+        height: 40px;
+        border-radius: 3px;
+        border: none;
+        border: 1px solid v.$border-sec;
+        padding-left: 10px;
+        background: v.$background-input;
+        color: v.$color;
+      }
+
+      input:focus {
+        border: 1px solid v.$green-sec;
+      }
+    }
+
+    .showcont-btn {
+      background: 0 0;
+      border: none;
+      color: v.$green;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .showcont-btn:after {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -0.125em;
+      margin-left: 0.25rem;
+      width: 0;
+      height: 0;
+      border: solid;
+      border-width: 5px 4px 0;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+    }
+
+    .filter-more {
+      margin-top: 20px;
+      display: none;
+
+      &.open {
+        display: block;
+      }
+
+      .filter-combo {
+        display: flex;
+        margin-top: 10px;
+
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          max-width: 50%;
+          flex: 0 0 50%;
+
+          label {
+            font-size: 14px;
+            color: v.$green-sec;
+            padding-bottom: 5px;
+          }
+
+          input {
+            width: 100%;
+            height: 40px;
+            border-radius: 3px;
+            border: none;
+            border: 1px solid v.$border-sec;
+            padding-left: 10px;
+            background: v.$background-input;
+            color: v.$color;
+          }
+
+          input:focus {
+            border: 1px solid v.$green-sec;
+          }
+        }
+
+        .form-group:first-child {
+          padding-right: 50px;
+        }
+      }
+
+      .checklist {
+        button {
+          background: v.$background-button;
+          border: 1px solid v.$color;
+          padding: 7px;
+          margin-right: 5px;
+          border-radius: 4px;
+          color: v.$color;
+          transition: all 0.2s;
+          cursor: pointer;
+        }
+
+        button:hover {
+          border: 1px solid v.$green;
+        }
+      }
+    }
+
+    .group-btn {
+      display: flex;
+      width: 190px;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      .search {
+        padding: 8px 20px;
+        border-radius: 30px;
+        border: none;
+        background: v.$background-button;
+        color: v.$color-second;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 14%);
+        cursor: pointer;
+      }
+
+      .clear {
+        background: 0 0;
+        border: none;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: v.$font-sec;
+        cursor: pointer;
+      }
+
+    }
+  }
