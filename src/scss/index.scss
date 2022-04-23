@@ -40,6 +40,8 @@ code {
 
     .body_right {
       width: 100%;
+      display: flex;
+      flex-direction: column;
 
       .header_panel {
         width: 100%;
@@ -54,15 +56,26 @@ code {
         }
       }
 
-      .main-left {
+      .body_cont {
+        display: flex;
+        flex-direction: row;
 
-        .after-filter {
-          border-bottom: 2px dashed v.$border-sec;
-          margin-top: 20px;
-          width: 100%;
-          margin-bottom: 20px;
+        .main-left {
+          border-right: 1px solid v.$border;
+
+          .after-filter {
+            border-bottom: 2px dashed v.$border-sec;
+            margin-top: 20px;
+            width: 100%;
+            margin-bottom: 20px;
+          }
+        }
+
+        .aside-right {
+          width: 30%;
         }
       }
+
     }
   }
 }

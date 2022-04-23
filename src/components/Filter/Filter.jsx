@@ -6,7 +6,7 @@ function Filter() {
       <div className="filter-cont">
         <div className="filter-group">
           <label>Ключевое слово</label>
-          <input type="text" autoComplete="off" placeholder="Главный герой" />
+          <input type="text" autoComplete="off" placeholder="Названия книги" />
         </div>
         <button className="showcont-btn">Больше параметров</button>
         <div className="filter-more open">
