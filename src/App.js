@@ -1,8 +1,23 @@
 import React from "react";
-
+import axios from 'axios';
 import {Menu, Filter, Books, Aside} from './components'
 
 function App() {
+  const [books, setBooks] = React.useState([]);
+  const [data, setData] = React.useState([]);
+  React.useEffect(() => {
+    async function fetch() {
+      const { data } = await axios.get(
+        'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=XA0bjlKuuS6OFbbXG5yypU2W4xwX3Nif',
+      );
+      setData(data.results);
+      setBooks(data.results.books);
+    }
+    fetch();
+
+  }, []);
+
+
 
   return (
       <div className="wrp">
@@ -18,10 +33,21 @@ function App() {
             <main className="main-left">
                   <Filter/>
             <div className="after-filter"></div>
-              <Books/>
+            {
+              books &&
+              books.map((b, index) => (
+                <Books data={b} key={index}/>
+              ))
+            }
             </main>
             <div className="aside-right">
-             <Aside/>
+            <h2 className="title">Популярное</h2>
+              {
+                 books &&
+                 books.map((h, index) => (
+                  <Aside data={h} key={index}/>
+                ))
+              }
             </div>
           </div>
         </div>

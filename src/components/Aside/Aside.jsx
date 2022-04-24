@@ -1,27 +1,14 @@
 import React from 'react';
-import axios from 'axios';
 
-function Aside() {
-  const [books, setBooks] = React.useState([]);
-  const [data, setData] = React.useState([]);
-
-  React.useEffect(() => {
-    async function fetch() {
-      const { data } = await axios.get(
-        'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=XA0bjlKuuS6OFbbXG5yypU2W4xwX3Nif',
-      );
-      setData(data.results);
-      setBooks(data.results.books);
-    }
-    fetch();
-  }, []);
-  console.log(books);
+function Aside({ data }) {
   return (
     <aside className="aside-right">
-      <h2 className='title'>Популярное</h2>
       <div className="tab-content">
-        <img width={50} src={books.length > 0 ? books[0].book_image : 'null'} alt="book_image" />
-        <div className="story-cont">{books.length > 0 ? books[0].title : 'null'}</div>
+        <img width={50} src={data.book_image} alt="book_image" />
+        <div className="story-cont">
+          <span>{data.title}</span>
+          <span className='hist-author'>{data.author}</span>
+        </div>
       </div>
     </aside>
   );

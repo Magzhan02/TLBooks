@@ -1,7 +1,6 @@
 .aside-right {
     display: flex;
     flex-direction: column;
-    padding-left: 35px;
 
     .title {
         margin-bottom: 30px;
@@ -12,11 +11,14 @@
         text-align: center;
         border-radius: 30px;
         cursor: pointer;
+        margin-left: 55px;
     }
 
     .tab-content {
         display: flex;
-        flex-direction: row;
+        width: 250px;
+        margin-bottom: 10px;
+        margin-left: 55px;
 
         img {
             width: 64px;
@@ -29,6 +31,16 @@
         .story-cont {
             color: v.$font-desc;
             font-size: 14px;
+
+            span{
+                display: block;
+                color: v.$font-desc;
+            }
+            .hist-author{
+                display: block;
+                color: v.$font-desc;
+                opacity: 0.5;
+            }
         }
     }
 }
