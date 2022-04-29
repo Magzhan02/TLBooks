@@ -1,6 +1,16 @@
 import React from 'react';
 
 function Filter() {
+  const [open, setOpen] = React.useState(false);
+
+  const setToggle = () => {
+    if (open === false) {
+      setOpen(true);
+    } else {
+      setOpen(false);
+    }
+  };
+
   return (
     <div className="filter-block">
       <div className="filter-cont">
@@ -8,8 +18,10 @@ function Filter() {
           <label>Ключевое слово</label>
           <input type="text" autoComplete="off" placeholder="Названия книги" />
         </div>
-        <button className="showcont-btn">Больше параметров</button>
-        <div className="filter-more open">
+        <button className="showcont-btn" onClick={() => setToggle()}>
+          Больше параметров
+        </button>
+        <div className={open ? 'filter-more open' : 'filter-more'}>
           <div className="filter-combo">
             <div className="form-group">
               <label>Год выпуска от</label>

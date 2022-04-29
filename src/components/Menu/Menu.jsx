@@ -1,11 +1,13 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 function Menu() {
   return (
     <menu>
       <ul>
         <li>
-          <img src="/image/book.svg" alt="icon" />
+          <Link to="/">
+            <img src="/image/book.svg" alt="icon" />
+          </Link>
         </li>
         <li>
           <img src="/image/user.svg" alt="user" />
