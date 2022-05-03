@@ -18,7 +18,7 @@ function Filter() {
           <label>Ключевое слово</label>
           <input type="text" autoComplete="off" placeholder="Названия книги" />
         </div>
-        <button className="showcont-btn" onClick={() => setToggle()}>
+        <button className="showcont-btn" onClick={setToggle}>
           Больше параметров
         </button>
         <div className={open ? 'filter-more open' : 'filter-more'}>
