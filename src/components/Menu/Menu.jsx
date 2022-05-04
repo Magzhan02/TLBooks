@@ -12,7 +12,7 @@ function Menu() {
   };
   const outSideClick = (e) => {
     if (!e.path.includes(navRef.current)) {
-      setToggleMenu(false);
+      setToggleMenu(true);
     }
   };
 
@@ -29,10 +29,21 @@ function Menu() {
           </Link>
         </li>
         <li>
-          <img src="/image/user.svg" alt="user" />
+          <Link to="user">
+            <img src="/image/user.svg" alt="user" />
+          </Link>
         </li>
-        <li onClick={toggleBtn} ref={navRef}>
-          <img src="/image/menu.svg" alt="menu" />
+        <li onClick={toggleBtn}>
+          <div class="navbar" ref={navRef}>
+            <div class="container nav-container">
+              <input class="checkbox" type="checkbox" />
+              <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+              </div>
+            </div>
+          </div>
           <div className={toggleMenu ? 'green-menu' : 'green-menu close'}>
             <div className="menu-nav">
               <nav>
@@ -41,7 +52,7 @@ function Menu() {
                   Главное
                 </Link>
                 <Link to="bookmark">
-                  <img src="image/bookmark.svg" alt="home-icon" />
+                  <img src="image/bookmark2.svg" alt="home-icon" />
                   Закладка
                 </Link>
                 <Link to="popular">

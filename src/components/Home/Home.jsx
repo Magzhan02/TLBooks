@@ -7,12 +7,12 @@ import { getBooks, getHistory } from './../../toolkitRedux/Slice/Books';
 
 function Home() {
   const dispatch = useDispatch();
-  const { books, loading, history } = useSelector(({ books }) => books);
+  const { books, history } = useSelector(({ books }) => books);
 
   React.useEffect(() => {
     dispatch(getBooks());
     dispatch(getHistory());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="body_right">
