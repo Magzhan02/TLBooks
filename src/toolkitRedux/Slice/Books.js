@@ -35,7 +35,14 @@ export const booksSlice = createSlice({
     addBookmark: (state, {
       payload
     }) => {
-      state.bookmark += payload
+      const bookExist = state.bookmark.find((item) => item.book_uri === payload.book_uri)
+      if (bookExist) {
+        console.log('exits')
+      } else {
+        state.bookmark.push({
+          ...payload
+        })
+      }
     },
   },
   extraReducers: {
@@ -51,7 +58,7 @@ export const booksSlice = createSlice({
     [getBooks.rejected]: (state) => {
       state.loading = false
     },
-    
+
     [getHistory.pending]: (state) => {
       state.loading = true
     },

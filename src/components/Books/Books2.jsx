@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Books({ data, addFavoriteBook }) {
+function Books2({ data }) {
   return (
     <div className="bk-content">
       <article>
@@ -22,14 +22,10 @@ function Books({ data, addFavoriteBook }) {
               buy link
             </a>
           </div>
-          <div className="marker" onClick={() => addFavoriteBook(data)}>
-            <img src="/image/bookmark.svg" alt="marker" />
-            Закладка
-          </div>
         </div>
       </article>
     </div>
   );
 }
 
-export default Books;
+export default Books2;

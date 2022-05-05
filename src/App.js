@@ -1,6 +1,6 @@
 import React from "react";
-import { Routes, Route, Switch } from "react-router-dom";
-import {Menu, Home } from './components'
+import { Routes, Route } from "react-router-dom";
+import {Menu, Home, Bookmark } from './components'
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<Home/>}/>
+          <Route path="bookmark" element={<Bookmark/>}/>
         </Routes>
       </div>
     </div>

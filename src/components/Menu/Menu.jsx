@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 function Menu() {
   const [toggleMenu, setToggleMenu] = React.useState(false);
+
   const navRef = React.useRef();
+
   const toggleBtn = () => {
     if (toggleMenu === false) {
       setToggleMenu(true);
@@ -10,9 +12,10 @@ function Menu() {
       setToggleMenu(false);
     }
   };
+
   const outSideClick = (e) => {
     if (!e.path.includes(navRef.current)) {
-      setToggleMenu(true);
+      setToggleMenu(false);
     }
   };
 
@@ -33,17 +36,8 @@ function Menu() {
             <img src="/image/user.svg" alt="user" />
           </Link>
         </li>
-        <li onClick={toggleBtn}>
-          <div class="navbar" ref={navRef}>
-            <div class="container nav-container">
-              <input class="checkbox" type="checkbox" />
-              <div class="hamburger-lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-              </div>
-            </div>
-          </div>
+        <li onClick={toggleBtn} ref={navRef}>
+          <img src="image/menu.svg" alt="menu-icon" />
           <div className={toggleMenu ? 'green-menu' : 'green-menu close'}>
             <div className="menu-nav">
               <nav>
