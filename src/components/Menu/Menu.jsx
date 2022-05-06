@@ -1,7 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 function Menu() {
   const [toggleMenu, setToggleMenu] = React.useState(false);
+  const { bookmark } = useSelector(({ books }) => books);
 
   const navRef = React.useRef();
 
@@ -43,15 +45,17 @@ function Menu() {
               <nav>
                 <Link to="/">
                   <img src="image/home.svg" alt="home-icon" />
-                  Главное
+                  <span>Главное</span>
                 </Link>
                 <Link to="bookmark">
                   <img src="image/bookmark2.svg" alt="home-icon" />
-                  Закладка
+                  <span>
+                    Закладка <span className="counter">{bookmark.length}</span>
+                  </span>
                 </Link>
                 <Link to="popular">
                   <img src="image/fire.svg" alt="fire-icon" />
-                  Популярное
+                  <span>Популярное</span>
                 </Link>
               </nav>
             </div>
