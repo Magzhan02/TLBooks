@@ -19,7 +19,7 @@ function Books({ data, addFavoriteBook }) {
         <div className="book-tool">
           <div className="btn link">
             <a href={data.buy_links[0].url} target="_blank">
-              buy link
+              Купить
             </a>
           </div>
           <div className="marker" onClick={() => addFavoriteBook(data)}>

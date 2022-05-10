@@ -98,7 +98,8 @@
                 cursor: pointer;
             }
 
-            .marker {
+            .marker,
+            .del__books {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -118,6 +119,11 @@
                     height: 16px;
                     margin-right: 7px;
                 }
+                .close__icon{
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 10px;
+                } 
             }
         }
     }

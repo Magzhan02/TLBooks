@@ -44,6 +44,12 @@ export const booksSlice = createSlice({
         })
       }
     },
+
+    deleteBookmark: (state, {
+      payload
+    }) => {
+      state.bookmark = state.bookmark.filter((item) => item.book_uri !== payload.book_uri)
+    },
   },
   extraReducers: {
     [getBooks.pending]: (state) => {
@@ -75,7 +81,8 @@ export const booksSlice = createSlice({
 });
 
 export const {
-  addBookmark
+  addBookmark,
+  deleteBookmark
 } = booksSlice.actions
 
 export default booksSlice.reducer

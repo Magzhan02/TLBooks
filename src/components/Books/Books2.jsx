@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Books2({ data }) {
+function Books2({ data, delFavoriteBook  }) {
   return (
     <div className="bk-content">
       <article>
@@ -19,8 +19,12 @@ function Books2({ data }) {
         <div className="book-tool">
           <div className="btn link">
             <a href={data.buy_links[0].url} target="_blank">
-              buy link
+              Купить
             </a>
+          </div>
+          <div className="del__books" onClick={() => delFavoriteBook(data) }>
+            <img src="/image/close.svg" alt="close" className="close__icon" />
+            Удалить
           </div>
         </div>
       </article>
